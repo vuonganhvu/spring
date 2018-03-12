@@ -3,6 +3,7 @@ package com.higgsup.service.impl;
 import com.higgsup.model.Student;
 import com.higgsup.repository.StudentRepository;
 import com.higgsup.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 

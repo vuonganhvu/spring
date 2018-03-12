@@ -9,6 +9,5 @@ public class DemoApp {
         ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
         StudentService studentService = context.getBean("studentService", StudentService.class);
         System.out.println(studentService.getAllStudent().size());
-
     }
 }

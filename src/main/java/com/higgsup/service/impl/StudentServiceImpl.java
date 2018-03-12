@@ -3,9 +3,12 @@ package com.higgsup.service.impl;
 import com.higgsup.model.Student;
 import com.higgsup.repository.StudentRepository;
 import com.higgsup.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service("studentService")
 public class StudentServiceImpl implements StudentService {
     private StudentRepository studentRepository;
 
@@ -23,6 +26,7 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.getAllStudent();
     }
 
+    @Autowired
     public void setStudentRepository(StudentRepository studentRepository) {
         System.out.println("Setter injection...");
         this.studentRepository = studentRepository;

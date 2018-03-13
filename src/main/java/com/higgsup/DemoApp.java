@@ -12,7 +12,7 @@ import java.util.List;
 public class DemoApp {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
-        StudentService studentService = context.getBean("studentService", StudentServiceImpl.class);
+        StudentService studentService = context.getBean(StudentService.class);
         List<Student> studentList = studentService.getAllStudent();
         System.out.println(studentList.size());
         Student student = studentList.get(0);

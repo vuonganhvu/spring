@@ -9,4 +9,40 @@
         <!--<constructor-arg name="studentRepository" ref="studentRepository"/>-->
     </bean>
 
+    <bean name="school" class="com.higgsup.collection.School">
+        <property name="studentCountry" >
+            <set value-type="java.lang.String">
+                <value>Viet Nam</value>
+                <value>USA</value>
+                <value>Trung Quoc</value>
+            </set>
+        </property>
+        <property name="studentName" >
+            <list value-type="java.lang.String">
+                <value>Anhvv</value>
+                <value>Cuongla</value>
+                <value>Hungnh</value>
+                <value>Tuha</value>
+            </list>
+        </property>
+        <property name="studentMap">
+            <map>
+                <entry key="Viet Nam">
+                    <list value-type="java.lang.String">
+                        <value>Anhvv</value>
+                        <value>Anhvv2</value>
+                        <value>Anhvv3</value>
+                    </list>
+                </entry>
+                <entry key="Trung Quoc">
+                    <list value-type="java.lang.String">
+                        <value>Hungnh</value>
+                        <value>Hungnh2</value>
+                        <value>Hungnh3</value>
+                    </list>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
 </beans>

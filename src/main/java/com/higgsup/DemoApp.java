@@ -1,10 +1,12 @@
 package com.higgsup;
 
 import com.higgsup.config.ApplicationConfig;
+import com.higgsup.config.BaseConfig;
 import com.higgsup.model.Student;
 import com.higgsup.service.StudentService;
 import com.higgsup.service.impl.StudentServiceImpl;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.List;
@@ -17,5 +19,6 @@ public class DemoApp {
         System.out.println(studentList.size());
         Student student = studentList.get(0);
         System.out.println(student);
+
     }
 }

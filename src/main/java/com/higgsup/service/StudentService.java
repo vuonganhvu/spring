@@ -6,4 +6,8 @@ import java.util.List;
 
 public interface StudentService {
     List<Student> getAllStudent();
+
+//     void init();
+
+//     void cleanup();
 }

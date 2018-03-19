@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+
 public class StudentServiceImpl implements StudentService {
     private final StudentRepository studentRepository;
 
@@ -20,5 +20,13 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<Student> getAllStudent(){
         return studentRepository.getAllStudent();
+    }
+
+    private void init(){
+        System.out.println("init StudentService Impl");
+    }
+
+    private void cleanup(){
+        System.out.println("cleanup StudentService Impl");
     }
 }

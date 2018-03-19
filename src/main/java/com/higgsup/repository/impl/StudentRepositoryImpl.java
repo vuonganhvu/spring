@@ -2,10 +2,12 @@ package com.higgsup.repository.impl;
 
 import com.higgsup.model.Student;
 import com.higgsup.repository.StudentRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class StudentRepositoryImpl implements StudentRepository{
 
     public StudentRepositoryImpl() {

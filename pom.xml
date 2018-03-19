@@ -17,6 +17,11 @@
             <artifactId>spring-context</artifactId>
             <version>${spring-verison}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${spring-verison}</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

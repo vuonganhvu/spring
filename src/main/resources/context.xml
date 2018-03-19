@@ -2,12 +2,26 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
     <context:annotation-config></context:annotation-config>
+    <aop:config>
+        <aop:aspect id="aspectService" ref="aspectBean">
+            <aop:pointcut id="businessService"
+                          expression="execution(* com.higgsup.service.impl.*.*(..))" />
+            <aop:before method="beforeAdvice" pointcut-ref="businessService"/>
+            <aop:after method="afterAdvice" pointcut-ref="businessService" />
+            <aop:after-returning method="afterRunningAdvice" returning="retVal" pointcut-ref="businessService"/>
+            <aop:after-throwing method="afterThrowingAdvice" throwing="ex" pointcut-ref="businessService"/>
+            <aop:around method="aroundAdvice" pointcut-ref="businessService" />
+        </aop:aspect>
+    </aop:config>
     <bean name="studentRepository" class="com.higgsup.repository.impl.StudentRepositoryImpl"/>
     <bean name="studentService" class="com.higgsup.service.impl.StudentServiceImpl">
         <!--<property name="studentRepository" ref="studentRepository"/>-->
-        <!--<constructor-arg name="studentRepository" ref="studentRepository"/>-->
+        <constructor-arg name="studentRepository" ref="studentRepository"/>
     </bean>
+    <bean name="aspectBean" class="com.higgsup.aspect.AspectServiceImpl" >
 
+    </bean>
 </beans>
